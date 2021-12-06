@@ -1,5 +1,9 @@
 package br.com.intelligenceweb.comercial;
 
+import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -30,7 +34,7 @@ public class ComercialApplication implements CommandLineRunner {
 		SpringApplication.run(ComercialApplication.class, args);
 	}
 	
-	
+	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	MunicipioService municipioService;
@@ -56,10 +60,10 @@ public class ComercialApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Executando Rotina");	
 		
 		
-		System.out.println("Inicio do Processo");
+		
+		 System.out.println("Inicio do Processo");
 		 
 		 Municipio m = new Municipio();
 		 m.setNome("Porto Ferreira");
@@ -74,6 +78,15 @@ public class ComercialApplication implements CommandLineRunner {
 		 cep.setMunicipio(m); 
 		 cepService.save(cep);
 		 
+		 log.info("Insert cep -> {}" , cep );
+		 
+		 
+		 Optional<Cep> CepOpt = cepService.findByCep("13636085");
+		 log.info("Find By cep -> {}" , CepOpt );
+		 
+		 
+		 
+		 /*
 		 EnderecoTipo endeTipo = new EnderecoTipo();
 		 endeTipo.setDescricao("Comercial");
 		 etService.save(endeTipo);
@@ -104,6 +117,7 @@ public class ComercialApplication implements CommandLineRunner {
 		 
 		  
 		 System.out.println("Fim do Processo");
+		 */
 	}
 
 }

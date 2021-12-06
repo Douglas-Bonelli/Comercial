@@ -22,13 +22,13 @@ public class CepServiceImpl implements CepService {
 	@Override
 	public Cep save(Cep cep) {
 		log.info("Persistindo cep {}" , cep);
-		return cepRepository.save(cep);
+		return this.cepRepository.save(cep);
 	}
 
 	@Override
 	public Optional<Cep> findByCep(String codigoCep ) {
 		log.info("Consultando o cep pelo código {}" , codigoCep );
-		return Optional.ofNullable(cepRepository.findByCep(codigoCep));
+		return Optional.ofNullable(this.cepRepository.findByCep(codigoCep));
 	}
 
 }
