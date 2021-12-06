@@ -47,10 +47,7 @@ public class CepServiceTest {
 		cep.setLogradouro("Rua manoel Leme Franco");
 		cep.setBairro("Jardim Santa Terezinha");
 		cep.setMunicipio(m); 
-		 
-		
-		
-		
+		 		
 	}
 
 }
