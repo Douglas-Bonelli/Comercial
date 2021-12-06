@@ -10,15 +10,14 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="Endereco_Tipo")
-public class EnderecoTipo implements Serializable {
+@Entity( name= "relacionamento_tipo")
+public class RelacionamentoTipo implements Serializable {
 	
-	private static final long serialVersionUID = 2755113417486578664L;
+	private static final long serialVersionUID = -5560862907512476512L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
